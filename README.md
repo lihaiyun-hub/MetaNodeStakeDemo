@@ -187,26 +187,26 @@ classDiagram
 
 ```mermaid
 flowchart TD
-    subgraph Actors[角色]
-        U[用户]
-        A[管理员]
+    subgraph Actors["角色"]
+        U["用户"]
+        A["管理员"]
     end
 
-    subgraph Contracts[合约]
-        S[MetaNodeStake]
-        M[MetaNodeToken / MetaNode(IERC20)]
-        X[StakingToken(IERC20) / ETH]
+    subgraph Contracts["合约"]
+        S["MetaNodeStake"]
+        M["MetaNodeToken / MetaNode (IERC20)"]
+        X["StakingToken (IERC20) / ETH"]
     end
 
-    U -->|deposit/depositETH| S
-    U -->|unstake/withdraw| S
-    U -->|claim| S
-    S -->|transfer 奖励| M
-    S -->|transferFrom/transfer| X
-    A -->|addPool/updatePool/setPoolWeight| S
-    A -->|setStartBlock/setEndBlock/setMetaNodePerBlock| S
-    A -->|pauseClaim/pauseWithdraw| S
-    A -->|UUPS upgrade| S
+    U -->|"deposit / depositETH"| S
+    U -->|"unstake / withdraw"| S
+    U -->|"claim"| S
+    S -->|"transfer 奖励"| M
+    S -->|"transferFrom / transfer"| X
+    A -->|"addPool / updatePool / setPoolWeight"| S
+    A -->|"setStartBlock / setEndBlock / setMetaNodePerBlock"| S
+    A -->|"pauseClaim / pauseWithdraw"| S
+    A -->|"UUPS upgrade"| S
 ```
 
 ## 详细设计
